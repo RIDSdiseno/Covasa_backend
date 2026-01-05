@@ -6,6 +6,7 @@ import catalogoRoutes from "./routes/catalogo.routes";
 import inventarioRoutes from "./routes/inventario.routes";
 import stockAlertsRoutes from "./routes/stockAlerts.routes";
 import cotizacionesRoutes from "./routes/cotizaciones.routes";
+import crmCotizacionesRoutes from "./routes/crmCotizaciones.routes";
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use("/api/stock-alerts", stockAlertsRoutes);
 
 /** ✅ Cotizaciones: ESTE ERA EL ERROR */
 app.use("/api/cotizaciones", cotizacionesRoutes);
+app.use("/api/crm/cotizaciones", crmCotizacionesRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
