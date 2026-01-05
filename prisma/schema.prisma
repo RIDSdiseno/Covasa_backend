@@ -255,30 +255,30 @@ model ImportFila {
 ///  * - Ganada: se completa dirección/contacto/obs/OC, etc.
 ///  * =========================
 model CrmCotizacion {
-  id                      String                @id @default(uuid())
+  id                      String              @id @default(uuid())
   clienteId               String?
   clienteNombreSnapshot   String
   clienteRutSnapshot      String?
   clienteEmailSnapshot    String?
   clienteTelefonoSnapshot String?
+  clienteDireccionSnapshot String?  // ✅ NUEVO
+
   nombreObra              String?
   numeroOC                String?
   observaciones           String?
   subtotalNeto            Int
   iva                     Int
   total                   Int
-  estado                  CrmEstadoCotizacion   @default(NUEVA)
+  estado                  CrmEstadoCotizacion @default(NUEVA)
   tipoCierre              CrmTipoCierre?
   vendedorId              String?
-  createdAt               DateTime              @default(now())
-  updatedAt               DateTime              @updatedAt
+  createdAt               DateTime            @default(now())
+  updatedAt               DateTime            @updatedAt
   origenCliente           OrigenCliente?
   ecommerce_cotizacion    ecommerce_cotizacion?
   ecommerce_pedido        ecommerce_pedido[]
-
-  @@index([estado])
-  @@index([createdAt])
 }
+
 
 model ecommerce_carrito {
   id                     String                   @id

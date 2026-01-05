@@ -5,15 +5,16 @@
   "description": "Covasa Backend API (Express + TypeScript + Prisma)",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio",
-    "prisma:reset": "prisma migrate reset",
-    "seed": "prisma db seed"
-  },
+  "dev": "tsx watch src/server.ts",
+  "build": "tsc",
+  "start": "node dist/server.js",
+  "prisma:generate": "prisma generate",
+  "prisma:migrate": "prisma migrate dev",
+  "prisma:studio": "prisma studio",
+  "prisma:reset": "prisma migrate reset",
+  "seed": "prisma db seed"
+}
+,
   "prisma": {
     "seed": "tsx prisma/seed.ts"
   },
